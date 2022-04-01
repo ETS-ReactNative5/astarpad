@@ -1,0 +1,1073 @@
+@media(max-width: 1500px){
+    .header-c2{
+        width: 80%;
+      }
+      .bule-circle {
+        width: 220px;
+        height: 220px;
+    }
+    .coolect-box{
+        width: 22%;
+    }
+    .collect-c {
+        margin-top: 130px;
+    }
+    .coolect-box{
+        height: 210px;
+    }
+}
+@media(max-width: 1440px){
+    .header-c2{
+        width: 70%;
+      }
+    .menu-list-d > li > a{
+        margin-left: 15px;
+    }
+   
+}
+@media(max-width: 1166px){
+    .header-c2{
+        width: auto;
+    }
+    #play-to-earn{
+        background-position: center;
+    }  
+    .toggle-slide-right {
+        display: block;
+    }
+    .burger-area {
+        display: block;
+    }
+    .menu-list-d{
+        display: none;
+    } 
+    .border-b {
+        padding: 20px;
+    }
+    .logo-box > a > img {
+        width: 120px;
+    }
+    .banner-wrap {
+        padding: 0px 20px;
+    }
+    .banner-cont {
+        width: 80%;
+        margin-top: 7%;
+    }
+    .services-main-wrap {
+        padding: 60px 20px;
+    }
+    .services-box {
+        background-color: #16182a;
+        padding: 40px 40px;
+        width: 300px;
+    }
+    .services {
+        margin-top: 26px;
+    }
+    .about-main-wrap {
+        padding: 60px 20px 0px 20px;
+    }
+    .about-cont {
+        width: 50%;
+        margin-top: 4%;
+    }
+    .something-head {
+        padding: 7px 0px;
+        width: 320px;
+    }
+    .somethingbox {
+        padding: 30px;
+        width: 300px;
+        height: 145px;
+    }
+    .buysomething-main-wrap {
+        padding: 40px 10px;
+    }
+    .somethingbox {
+        padding: 15px;
+        width: 287px;
+        height: 138px;
+    }
+    .knowmore-but {
+        margin-top: 10px;
+    }
+    .bnr-wrap {
+        width: 80%;
+    }
+    .bnr-main-wrap {
+        padding: 8% 20px;
+    }
+    .upcoming-heading {
+        width: 36%;
+    }
+    .upcoming-main-wrap {
+        padding: 40px 20px;
+    }
+    .u-box {
+        display: inherit;
+    }
+    .ubleft {
+        width: 100%;
+    }
+    .ubright {
+        width: 100%;
+    }
+    .upcoming-box-wrap {
+        padding: 6% 6% 5% 6%;
+    }
+    .upcoming-bottom {
+        padding: 180px 30px 20px 30px;
+    }
+    .toyo-hding {
+        justify-content: space-between;
+    }
+    .P-box {
+        display: inherit;
+    }
+    .pbleft {
+        width: 100%;
+    }
+    .pbright {
+        width: 100%;
+    }
+    .pool-bottom {
+        padding: 24% 4% 1% 4%;
+    }
+    .pool-box-wrap {
+        padding: 6% 6% 5% 6%;
+    }
+    .claimbnr-main-wrap {
+        padding: 8% 20px;
+    }
+    /* claim open */
+    .claimbox {
+        padding: 20px;
+    }
+    .claimbutn > a > img {
+        width: 52%;
+        margin-top: 20px;
+    }
+    .claim-l-img > img {
+        width: 80px;
+    }
+    .claim-l-cont > h5 {
+        margin: 0px 0px 0px 30px;
+    }
+    /* claim closed */
+    /* stake open */
+    .stakebnr-main-wrap {
+        padding: 8% 20px;
+    }
+    .lock-list > a {
+        padding: 10px 55px;
+    }
+    .react-tabs__tab-list {
+        padding: 35px 0px 60px 10px !important;
+    }
+    .staketabbg {
+        padding: 30px 30px 97px 30px;
+        margin-top: -20px;
+    }
+    .lock-d-wrap {
+        margin-top: 15px;
+    }
+    .lock-list-butn > a {
+        margin-top: 15px;
+    }
+    .approve-sec-wrap {
+        margin-top: 40px;
+    }
+    .appro-butn > a > img {
+        margin-top: -77px;
+        width: 42%;
+    }
+    /* stake closed */
+
+    /* farm open */
+    .view-wrap {
+        padding-top: 2%;
+    }
+    .farmtabbg {
+        padding: 20px 30px 28px 30px;
+    }
+    .distr-img > img {
+        margin-top: 10px;
+    }
+    .distrib-token {
+        margin-top: 10px;
+    }
+    .p-list-s {
+        padding: 7px 0px;
+    }
+    .view-cont {
+        margin-right: 25%;
+    }
+    /* farm closed */
+     
+}
+@media(max-width: 992px){
+      /* create presale css open here */
+      #createpresalebg {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+   
+.softcap-content > h3{
+    font-size: 13px;
+}
+.wrp-softcap > input{
+    font-size: 13px;
+}
+.form-control12{
+    font-size: 13px;
+}
+.input-know > h3{
+    font-size: 13px;
+}
+.presalerate-box > h3 > input{
+    width: 82%;
+}
+.date-content-box > h3{
+    font-size: 13px;
+}
+.mt-5 {
+    margin-top: 2rem!important;
+}
+.list-box-l2{
+    margin-top: 30px;
+}
+/* create presale css closed here */
+ 
+  
+    .logo-box > a > img {
+        width: 110px;
+    }
+    .burgers > img {
+        width: 30px;
+    }
+    .banner {
+        display: inherit;
+    }
+    .banner-cont {
+        width: 100%;
+        margin-top: 0%;
+        padding-top: 50px;
+        text-align: center;
+    }
+    .icon {
+        justify-content: center;
+    }
+    .button {
+        justify-content: center;
+    }
+    .banner-img {
+        text-align: center;
+    }
+    .banner-img > img {
+        width: 60%;
+    }
+    .services {
+        display: inherit;
+        margin-top: 0px;
+    }
+    .services-box {
+        width: 100%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .about-wrap {
+        display: inherit;
+    }
+    .about-img {
+        width: 100%;
+        margin-top: 40px;
+        text-align: center;
+    }
+    .about-img > img {
+        width: 60%;
+    }
+    .about-cont {
+        width: 100%;
+        margin-top: 8%;
+        text-align: center;
+    }
+    .about-info {
+        display: inherit;
+    }
+    .info {
+        width: 100%;
+    }
+    .about-main-wrap {
+        padding: 60px 20px 60px 20px;
+    }
+    .buysomething {
+        display: inherit;
+    }
+    .something-head {
+        padding: 30px 0px;
+        width: 100%;
+    }
+    .somethingbox {
+        padding: 40px;
+        width: 100%;
+        height: 328px;
+        text-align: center;
+    }
+    .knowmore-but {
+        margin-top: 30px;
+    }
+    .knowmore-but > a {
+        display: inline-flex;
+    }
+    .bnr-cont > h3 {
+        font-size: 36px;
+    }
+    .upcoming-heading > h3 {
+        font-size: 20px;
+    }
+    .upcoming-bottom {
+        padding: 70px 30px 20px 30px;
+    }
+    .pool-bottom {
+        padding: 12% 4% 1% 4%;
+    }
+    .footer-wrap {
+        display: inherit;
+        text-align: center;
+    }
+    .f-cont-list {
+        display: inherit;
+    }
+    .f-cont-list > li {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .f-logo > a > img {
+        width: 40%;
+    }
+    .social-icon {
+        justify-content: center;
+        margin-top: 15px;
+    }
+    .logo-box > a > img {
+        margin-left: 160px;
+    }
+    /* claim open */
+    .claimhding > h3 {
+        font-size: 36px;
+    }
+    .claim-l-cont > h5 {
+        font-size: 20px;
+    }
+    .allowcation-cont > p {
+        font-size: 16px;
+    }
+    .startdate-cont > p {
+        font-size: 16px;
+    }
+    .claim-l-img > img {
+        width: 60px;
+    }
+    .claimleft {
+        margin-top: 10px;
+    }
+    .claimbox {
+        padding: 16px;
+    }
+    .claimbutn > a > img {
+        width: 51%;
+        margin-top: 38px;
+    }
+    .claim-list > li {
+        margin-top: 30px;
+    }
+    /* claim closed */
+    /* stake open */
+    .lock-list > a {
+        padding: 10px 34px;
+    }
+    .stakehding > h3 {
+        font-size: 36px;
+    }
+    .stakebnr-wrap {
+        width: 100%;
+    }
+    .Applybutn2 {
+        padding: 10px 36px;
+    }
+    .pancakebutn2 {
+        padding: 10px 26px;
+    }
+    .react-tabs__tab-list {
+        padding: 20px 0px 36px 10px !important;
+    }
+    .approve-sec-wrap {
+        margin-top: 12px;
+    }
+    .lock-list > a {
+        padding: 6px 34px;
+    }
+    .lock-list-butn > a {
+        padding: 6px 50px;
+    }
+    .staketabbg {
+        padding: 10px 30px 58px 30px;
+        margin-top: -15px;
+    }
+    .appro-butn > a > img {
+        margin-top: -64px;
+    }
+    /* stake closed */
+
+    /* farm open  */
+    .farmtabbg {
+        background-image: url(../images/farm768.png);
+        padding: 40px 40px 30px 40px;
+        margin-top: -15px;
+    }
+    .p-list-s {
+        padding: 10px 0px;
+    }
+    .view-cont {
+        margin-right: 15%;
+    }
+    .view-wrap {
+        padding-top: 4%;
+    }
+    /* farm closed */
+    
+ /* create presale css open here */
+   
+.softcap-content > h3{
+    font-size: 13px;
+}
+.wrp-softcap > input{
+    font-size: 13px;
+}
+.form-control12{
+    font-size: 13px;
+}
+.input-know > h3{
+    font-size: 13px;
+}
+.presalerate-box > h3 > input{
+    width: 82%;
+}
+.date-content-box > h3{
+    font-size: 13px;
+}
+.mt-5 {
+    margin-top: 2rem!important;
+}
+.list-box-l2{
+    margin-top: 30px;
+}
+/* create presale css closed here */
+  
+
+}
+@media(max-width: 767px){
+    /* create presale css open here */
+    
+    .wrp-list-box{
+        display: inherit;
+    }
+    .tabs a{
+        font-size: 12px;
+    }
+    .connect-wallet textarea, .connect-wallet input{
+        font-size: 14px;
+    }
+    .connect-wallet > a{
+        font-size: 14px;
+    }
+    .wrp-social-l {
+        display: inherit;
+        text-align: center;
+    }
+    .blue-99{
+        font-size: 13px;
+    }
+    .charts {
+        width: 18px;
+    }
+    .list-s-icons{
+        margin-top: 15px;
+    }
+    .presale-head {
+        width: 100%;
+        background-size: 100% 100%;
+        height: 82px;
+    }
+    .presale-head {
+        padding-top: 5px;
+    }
+    .wrp-verify-box{
+        display: inherit;
+    }
+    .verify-left-box,.verify-right-box{
+        width: 100%;
+    }
+    .verify-box2{
+        padding: 10px 30px 25px 30px;
+    }
+    .presalerate-box > h3 > input{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .presalerate-box > h3{
+        font-size: 13px;
+    }
+    .softcap-left > span{
+        font-size: 13px;
+    }
+    .datetime-input > input{
+        font-size: 13px;
+    }
+    .date-content-box{
+        margin-top: 15px;
+    }
+    .presale-list > li{
+        margin: 0px! important;
+    }
+    .approve-text > h5{
+        font-size: 15px;
+    }
+    .softcap-left > input{
+        font-size: 13px;
+    }
+    /* create presale css closed here */
+    .logo-box > a > img {
+        width: 100px;
+    }
+    .banner-cont {
+        padding-top: 30px;
+    }
+    .border-b {
+        padding: 10px 0px;
+    }
+    .banner-wrap {
+        padding: 0px;
+    }
+    .bnr-heading > h3 {
+        font-size: 36px;
+    }
+    .bnr-heading > p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .social-icon {
+        margin-bottom: 0px;
+    }
+    .button {
+        margin-top: 30px;
+    }
+    .services-main-wrap {
+        padding: 30px 0px;
+    }
+    .services-head > h3 {
+        font-size: 24px;
+    }
+    .services-head > p {
+        font-size: 14px;
+
+    }
+    .serices-line {
+        margin: 2% 40%;
+        margin-top: 15px;
+    }
+    .services-box {
+        margin-top: 15px;
+    }
+    .services-box > h3 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .services-box > p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .services-box > img {
+        width: 40px;
+    }
+    .about-cont > h3 {
+        font-size: 20px;
+    }
+    .about-main-wrap {
+        padding: 30px 0px;
+    }
+    .about-cont > p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .info > h3 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .info> p {
+        font-size: 14px;
+        margin-top: 0px;
+    }
+    .upcoming-main-wrap {
+        padding: 20px 0px;
+        text-align: center;
+    }
+    .upcoming-box-wrap {
+        margin-top: 20px;
+        text-align: center;
+        background-image: url(../images/upcomingboxresponsive.png);
+    }
+    .toyo-hding {
+        display: inherit;
+    }
+    .toyo-hding > p {
+        margin-left: 0px;
+        padding: 10px 20px;
+        margin-top: 10px;
+    }
+    .bnr-wrap {
+        width: 100%;
+        text-align: center;
+    }
+    .bnr-butn-one {
+        display: inherit;
+    }
+    .upcoming-top {
+        display: inherit;
+    }
+    .toyo-hding > h5 {
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    .u-bootom-lis {
+        display: inherit;
+    }
+    .bnr-cont > h3 {
+        font-size: 24px;
+    }
+    .bnr-main-wrap {
+        padding: 8% 0px;
+    }
+    .pancakebutn {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .bnr-butn-two {
+        margin-top: 15px;
+    }
+    .buy-s-butntwo {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .bnr-butn {
+        margin-top: 20px;
+    }
+    .buysomething-main-wrap {
+        padding: 20px 0px;
+    }
+    .something-head > h5 {
+        font-size: 16px;
+    }
+    .something-head {
+        padding: 10px 0px;
+    }
+    .somethingbox > p {
+        font-size: 14px;
+    }
+    .somethingbox {
+        padding: 10px;
+        width: 100%;
+        height: 140px;
+    }
+    .knowmore-but {
+        margin-top: 15px;
+    }
+    .upcoming-heading > h3 {
+        font-size: 14px;
+    }
+    .upcoming-heading {
+        width: 100%;
+        text-align: center;
+    }
+    .upcoming-heading {
+        padding: 8% 0%;
+    }
+    .u-top-left > img {
+        width: 60px;
+    }
+    .u-top-right {
+        margin-left: 0px;
+    }
+    .upcoming-bottom {
+        padding: 46px 0px 0px 0px;
+    }
+    .large {
+        font-size: 16px !important;
+    }
+    .u-bootom-lis > li > h5 {
+        font-family: 'MADE TOMMY';
+        font-size: 14px;
+        color: #fff;
+    }
+    .upcoming-box-wrap {
+        padding: 5% 0% 5% 0%;
+    }
+    .u-bootom-lis > li > h5 > strong {
+        font-size: 14px;
+    }
+    .pool-box-wrap {
+        padding: 10% 0% 10% 0%;
+        margin-top: 20px;
+        background-image: url(../images/poolboxrespon.png);
+    }
+    .progress-wrap {
+        display: inherit;
+        width: 100%;
+    }
+    .pro-r > p {
+        color: #fff;
+        font-size: 13px;
+        margin-top: 10px;
+    }
+    
+    .footer-bg {
+        padding: 20px 0px;
+    }
+    .u-bootom-lis > li {
+        margin-top: 20px;
+    }
+    .logo-box > a > img {
+        margin-left: 110px;
+    }
+    /* claim open */
+    .claimhding > h3 {
+        font-size: 24px;
+    }
+    .claimbnr-cont {
+        display: inherit;
+    }
+    .claimbnr-main-wrap {
+        padding: 6% 0px;
+    }
+    .claimbutn-wrap {
+        display: flex;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    .monthly-butn > a {
+        padding: 8px 36px;
+    }
+    .linear-butn > a {
+        padding: 8px 36px;
+    }
+    .claimhding {
+        text-align: center;
+    }
+    .claimbox {
+        display: inherit;
+    }
+    .claimleft {
+        display: inherit;
+    }
+    .claimright {
+        display: inherit;
+    }
+    .claimbox {
+        background-image: none;
+    }
+    .claim-list-wrap {
+        text-align: center;
+    }
+    .claim-l-cont > h5 {
+        margin: 0px;
+        font-size: 16px;
+        margin-top: 15px;
+    }
+    .startdate-cont {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .allowcation-cont {
+        margin-top: 15px;
+    }
+    .claimbutn > a > img {
+        width: 100%;
+        margin-top: 80px;
+    }
+    .claimboxresponsive {
+        background-image: url(../images/cbresponsive.png);
+        padding: 10px 10px 32px 10px;
+    }
+    .claimbutn > a > img {
+        display: none;
+    }
+    .cbutnresponsive {
+        display: block;
+        text-align: right;
+      }
+      .cbutnresponsive > img {
+        margin-top: 53px;
+        width: 63%;
+      }
+      .cbutnresponsive > img:hover{
+          transform: translateY(-5px);
+      }
+    /* claim closed */
+    /* stake open */
+    .stakebnr-main-wrap {
+        padding: 6% 0px;
+    }
+    .stakehding > h3 {
+        font-size: 24px;
+    }
+    .stakehding > p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .stakebutn-wrap {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .Applybutn2 {
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+    .stakehding {
+        text-align: center;
+    }
+    .tab-main-wrap {
+        margin-top: 20px;
+    }
+    .react-tabs__tab {
+        font-size: 14px;
+    }
+    .react-tabs__tab-list {
+        padding: 5px 0px 10px 0px !important;
+    }
+    .lock-d > h5 {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .lock-list {
+        display: inherit;
+    }
+    .staketabbg {
+        text-align: center;
+        background-image: url(../images/staketabbgresponsive.png);
+        padding: 10px 30px 36px 30px;
+    }
+    .lock-list > a {
+        width: 100%;
+        margin-top: 15px;
+    }
+    .lock-list > a {
+        font-size: 14px;
+    }
+    .lock-list-butn > a {
+        font-size: 14px;
+    }
+    .lock-d-wrap {
+        margin-top: 0px;
+    }
+    .approve-list > li > h5 {
+        font-size: 14px;
+    }
+    .approve-list > li > p {
+        font-size: 16px;
+    }
+    .approve-list {
+        display: inherit;
+    }
+    .approve-list > li {
+        margin-top: 10px;
+    }
+    .appro-butn > a > img {
+        margin-top: -46px;
+        width: 46%;
+    }
+    /* stake closed */
+    /* farm open */
+    .p-detail > h5 {
+        font-size: 20px;
+    }
+    .p-list-s > p {
+        font-size: 14px;
+    }
+    .p-list-s {
+        padding: 5px 0px;
+    }
+    .farmtabbg {
+        background-image: url(../images/farm360.png);
+        padding: 15px 15px 31px 15px;
+
+    }
+    .view-cont > p {
+        font-size: 14px;
+    }
+    .view-butn > a {
+        padding: 6px 20px;
+        font: 14px;
+    }
+    .distrib-token > p {
+        font-size: 13px;
+    }
+    .p-detail-list > li {
+        margin-top: 4px;
+    }
+    .view-cont {
+        margin-right: 0%;
+    }
+    .view-wrap {
+        justify-content: space-between;
+    }
+    .appro-butn > a > img {
+        margin-top: -44px;
+        width: 43%;
+    }
+    /* farm closed */
+    /* create presale css open here */
+    
+    .wrp-list-box{
+        display: inherit;
+    }
+    .tabs a{
+        font-size: 12px;
+    }
+    .connect-wallet textarea, .connect-wallet input{
+        font-size: 14px;
+    }
+    .connect-wallet > a{
+        font-size: 14px;
+    }
+    .wrp-social-l {
+        display: inherit;
+        text-align: center;
+    }
+    .blue-99{
+        font-size: 13px;
+    }
+    .charts {
+        width: 18px;
+    }
+    .list-s-icons{
+        margin-top: 15px;
+    }
+    .presale-head {
+        width: 100%;
+        background-size: 100% 100%;
+        height: 82px;
+    }
+    .presale-head {
+        padding-top: 5px;
+    }
+    .wrp-verify-box{
+        display: inherit;
+    }
+    .verify-left-box,.verify-right-box{
+        width: 100%;
+    }
+    .verify-box2{
+        padding: 10px 30px 25px 30px;
+    }
+    .presalerate-box > h3 > input{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .presalerate-box > h3{
+        font-size: 13px;
+    }
+    .softcap-left > span{
+        font-size: 13px;
+    }
+    .datetime-input > input{
+        font-size: 13px;
+    }
+    .date-content-box{
+        margin-top: 15px;
+    }
+    .presale-list > li{
+        margin: 0px! important;
+    }
+    .approve-text > h5{
+        font-size: 15px;
+    }
+    .softcap-left > input{
+        font-size: 13px;
+    }
+    .box-section {
+        padding-bottom: 30px;
+        padding-top: 0px;
+    }
+    .list-s-icons {
+        justify-content: center;
+    }
+    /* create presale css closed here */
+}
+
+@media(max-width: 680px){
+  
+   
+    /* create presale css open here */
+    #createpresalebg{
+        background-size: cover;
+    }
+    h3{
+        margin: 11px;
+    }
+    .tabs{
+        display: inherit;
+    }
+    .tabs > li{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .emptyCard{
+        margin-top: 15px;
+    }
+    .wrp-list-box > div > h4{
+        font-size: 18px;
+    }
+    .mrt-left{
+        margin-left: 0px;
+    }
+    .charts{
+        width: 14px;
+    }
+    .blue-99 {
+        font-size: 12px;
+    }
+    .list-box-l2{
+        padding: 20px 15px 20px 15px;
+    }
+    .padchain-box {
+        padding: 20px 0px 0px 0px;
+    }
+    .presale-head {
+        padding-top: 10px;
+    }
+    .verify-box2 {
+        padding: 10px 15px 25px 15px;
+    }
+    #createpresalebg {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    .wrpknow {
+        display: inherit;
+    }
+    .input-know > h3 {
+        font-size: 13px;
+    }
+    .know-content {
+        text-align: left;
+    }
+    .input-know > h3 {
+        margin: 0px;
+    }
+    .input-know > p {
+        color: #fff;
+        font-size: 12px;
+      }
+    /* create presale css closed here */
+}
