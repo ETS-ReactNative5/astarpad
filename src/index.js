@@ -9,7 +9,7 @@ import { Web3ReactProvider } from '@web3-react/core'
 
 ReactDOM.render(<UseWalletProvider
     connectors={{
-     walletconnect: {rpcUrl :"https://data-seed-prebsc-1-s1.binance.org:8545/"}
+     walletconnect: {rpcUrl :Config.RPC_URL}
     }}
    chainId={Config.CHAIN_ID}>
        <App />
