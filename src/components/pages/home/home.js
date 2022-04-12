@@ -9,6 +9,11 @@ import toyo from '../../images/toyo.png'
 import progress from '../../images/progress.png'
 import Upcomingpool from '../padchain/Upcomingpool.js';
 import Completedpools from '../padchain/Completedpools.js';
+import Faq from '../Faq/index.js';
+
+
+
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
@@ -34,32 +39,31 @@ class Home extends Component {
 							<div className='container-fluid'>
 								<div className='bnr-wrap'>
 									<div className='bnr-cont'>
-										<h3>Enter the gateway of
-											Blockchain Gaming
+										<h3>UNLOCK YOUR DOOR TO UNLIMITED POSSIBILITIES OF BLOCKCHAIN
 										</h3>
 									</div>
 									<div className='bnr-butn'>
 										<div className='bnr-butn-one'>
-											<a href='#'>
+											<a href='https://docs.google.com/forms/d/e/1FAIpQLSftAgtBZjAUUnECrWcfmXapTaceBJ2WtIZOQjbxR2FDGeo7xg/viewform'target='_blank'>
 												<div className='Applybutn'>
 													<p>Apply as a projext</p>
 												</div>
 											</a>
 											<a href='#'>
 												<div className='pancakebutn'>
-													<p>Buy on pancakeswap</p>
+													<p>Buy on ArthSwap</p>
 												</div>
 											</a>
 										</div>
 										<div className='bnr-butn-two'>
 											<a href='#'>
 												<div className='buy-s-butn'>
-													<p>buy on something</p>
+													<p>FAQ</p>
 												</div>
 											</a>
-											<a href='#'>
+											<a href='https://blockscout.com/astar/address/0xf8bD0302E8E0b652DcD67D92CF42fbC5aFBdc127/transactions'target='_blank'>
 												<div className='buy-s-butntwo'>
-													<p>buy on something</p>
+													<p>Astarscan</p>
 												</div>
 											</a>
 										</div>
@@ -77,14 +81,15 @@ class Home extends Component {
 									<ul className='buysomething'>
 										<li>
 											<div className='something-head'>
-												<h5>Buy on something</h5>
+												<h5>What is Astarpad?</h5>
 											</div>
 											<div className='s-box-wrap'>
 												<div className='somethingbox'>
-													<p>Before getting started, let's dig into Seedify and
-														what it stands for</p>
+													<p>Astarpad is a launchpad for unique and different types
+														of projects like DeFi, blockchain gaming, NFTs, and all those
+														projects which utilize blockchain for all of us.</p>
 													<div className='knowmore-but mknow'>
-														<a href='#'>
+														<a href='https://medium.com/@astarlaunchpad/what-is-astarpad-d85bd370f9d5' target='_blank'>
 															<p>Know more</p>
 															<img src={arrow}></img>
 														</a>
@@ -94,14 +99,14 @@ class Home extends Component {
 										</li>
 										<li>
 											<div className='something-head'>
-												<h5>Buy on something</h5>
+												<h5>How to Get Started with Astarpad?</h5>
 											</div>
 											<div className='s-box-wrap'>
 												<div className='somethingbox'>
-													<p>Before getting started, let's dig into Seedify and
-														what it stands for</p>
+													<p>It looks like you want to start getting amazing benefits from
+														Astarpad projects that’s why you are here</p>
 													<div className='knowmore-but'>
-														<a href='#'>
+														<a href='https://medium.com/@astarlaunchpad/how-to-get-started-with-astarpad-1dd7554182a8' target='_blank'>
 															<p>Know more</p>
 															<img src={arrow}></img>
 														</a>
@@ -111,14 +116,16 @@ class Home extends Component {
 										</li>
 										<li>
 											<div className='something-head'>
-												<h5>Buy on something</h5>
+												<h5>Astarpad Tier System</h5>
 											</div>
 											<div className='s-box-wrap'>
 												<div className='somethingbox'>
-													<p>Before getting started, let's dig into Seedify and
-														what it stands for</p>
+													<p>Here at Astarpad, we have introduced 3 tier system.
+														Each have its own allocation pools and max contribution limit
+														(max contribution limit varies from project to project) and
+														you’re required to hold Astarpad tokens for each tier.</p>
 													<div className='knowmore-but'>
-														<a href='#'>
+														<a href='https://medium.com/@astarlaunchpad/astarpad-tier-system-c7837058ef7d' target='_blank'>
 															<p>Know more</p>
 															<img src={arrow}></img>
 														</a>
@@ -139,10 +146,10 @@ class Home extends Component {
 									<div className='upcoming-heading'>
 										<h3>UPCOMING POOLS</h3>
 									</div>
-									
+
 								</div>
 								<Upcomingpool />
-								 
+
 								{/* <div className='u-box'>
 									<div className='ubleft'>
 										<div className='upcoming-box-wrap'>
@@ -436,6 +443,17 @@ class Home extends Component {
 							</div>
 						</div>
 					</section>
+
+					<section id='FAQ'>
+
+						<div className='faq'>
+							<div className='container-fluid'>
+ <Faq />
+							</div>
+						</div>
+
+					</section>
+
 					<Footer />
 				</div>
 

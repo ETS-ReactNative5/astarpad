@@ -73,8 +73,8 @@
         margin-top: 4%;
     }
     .something-head {
-        padding: 7px 0px;
-        width: 320px;
+        padding: 15px 0px;
+        width: 475px;
     }
     .somethingbox {
         padding: 30px;
@@ -86,8 +86,11 @@
     }
     .somethingbox {
         padding: 15px;
-        width: 287px;
-        height: 138px;
+    width: 435px;
+    height: 210px;
+    }
+    .buysomething {
+        flex-wrap: wrap;
     }
     .knowmore-but {
         margin-top: 10px;
@@ -99,7 +102,7 @@
         padding: 8% 20px;
     }
     .upcoming-heading {
-        width: 36%;
+        width: 38%;
     }
     .upcoming-main-wrap {
         padding: 40px 20px;
@@ -204,9 +207,45 @@
         margin-right: 25%;
     }
     /* farm closed */
+
+    /* NFTMarketplace open here */
+    .nft-marketplace-main-wrap {
+        padding: 0px 40px;
+    }
+    /* NFTMarketplace close here */
+
+    /* faq open here */
+    .main-container {
+        padding: 0px 40px 60px 40px;
+    }
+    /* faq close here */
      
 }
 @media(max-width: 992px){
+    /* faq open here */
+    .main-container {
+        padding: 0px 20px 40px 20px;
+    }
+    /* faq closed here */
+
+
+    /* NFTMarketplace open here */
+    .nft-marketplace-wrap {
+        display: inherit;
+    }
+    .nft-marketplace-heading {
+        padding-top: 80px;
+    }
+    .nft-m-right {
+        height: 700px;
+        width: 100%;
+        margin-top: 60px;
+    }
+    .nft-m-left {
+        height: 700px;
+        width: 100%; 
+    }
+    /* NFTMarketplace close here */
       /* create presale css open here */
       #createpresalebg {
         padding-top: 20px;
@@ -397,7 +436,12 @@
         padding: 10px 36px;
     }
     .pancakebutn2 {
-        padding: 10px 26px;
+        padding: 12px 46px;
+        width: 215px;
+    }
+    .Applybutn {
+        padding: 12px 46px;
+        width: 220px;
     }
     .react-tabs__tab-list {
         padding: 20px 0px 36px 10px !important;
@@ -464,10 +508,84 @@
     margin-top: 30px;
 }
 /* create presale css closed here */
-  
+
+/* marketplace open here */
+.tabs6 a {
+    padding: 8px 24px;
+}
+/* marketplace closed here */
+
+/* product open here  */
+.product-right-content {
+    margin-top: 30px;
+}
+/* product closed here */
 
 }
 @media(max-width: 767px){
+
+/* faq open here */
+.main-container {
+    padding: 0px 0px 40px 0px;
+}
+.block__items2 {
+    padding: 20px 15px!important;
+}
+.head-faq>h3 {
+    font-size: 14px;
+    padding-top: 10px;
+}
+/* faq closed here */
+ 
+.font-weight-bold {
+    font-size: 16px;
+}
+/* profile open here */
+#edit-profile {
+    padding: 80px 0px;
+}
+/* profile close here */
+
+/* collection page open here */
+.tabs-btn>h3 {
+    font-size: 24px;
+}
+/* collection page closed here */
+   /* marketplace open here */
+   .tabs6 {
+    display: inherit;
+}
+.tabs6 a {
+    margin-right: 0px;
+}
+.tabs6 > li {
+    margin-top: 15px;
+}
+.tabs6 > li:first-child{
+    margin-top: 0px;
+}
+   /* marketplace closed here */
+
+    /* NFTMarketplace open here */
+    .nft-marketplace-main-wrap {
+        padding: 0px;
+    }
+    .nft-marketplace-heading {
+        padding-top: 40px;
+    }
+    .nft-content {
+        margin-top: 80px;
+    }
+    .nft-m-right {
+        height: 410px;
+        width: 100%;
+        margin-top: 20px;
+    }
+    .nft-m-left {
+        height: 410px;
+        width: 100%; 
+    }
+    /* NFTMarketplace close here */
     /* create presale css open here */
     
     .wrp-list-box{
@@ -644,7 +762,7 @@
         display: inherit;
     }
     .bnr-cont > h3 {
-        font-size: 24px;
+        font-size: 20px;
     }
     .bnr-main-wrap {
         padding: 8% 0px;
@@ -676,9 +794,10 @@
         font-size: 14px;
     }
     .somethingbox {
+        background-image: url(../images/stng.png);
         padding: 10px;
         width: 100%;
-        height: 140px;
+        height: 240px;
     }
     .knowmore-but {
         margin-top: 15px;
@@ -832,6 +951,15 @@
     .Applybutn2 {
         margin-left: 0px;
         margin-top: 10px;
+    }
+    .pancakebutn2{
+        padding: 14px 56px;
+        width: 240px;
+    }
+    .Applybutn {
+        padding: 14px 56px;
+        width: 240px;
+        margin-top: 15px;
     }
     .stakehding {
         text-align: center;
@@ -1070,4 +1198,10 @@
         font-size: 12px;
       }
     /* create presale css closed here */
+    .bnr-butn-one > a {
+        margin-left: 0px;
+    }
+    .bnr-butn-two > a {
+        margin-left: 0px;
+    }
 }

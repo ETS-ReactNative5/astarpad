@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import logo from '../images/logo.png';
 import telegram from '../images/telegram.png';
 import medium from '../images/medium.png';
-import twitter from '../images/twitter.png'
+import twitter from '../images/twitter.png';
+import discord from '../images/discord.png';
 
 class Footer extends Component {
   render() {
@@ -22,19 +23,24 @@ class Footer extends Component {
 					 </div>
 					 <div className='f-social-icon'>
 					 <ul className="social-icon">
-                        <li>
-                          <a href='#'>
+           <li>
+                          <a href='https://t.me/AstarpadOfficial'target="_blank">
                             <img src={telegram}></img>
                           </a>
                         </li>
                         <li>
-                          <a href='#'>
+                          <a href='https://medium.com/@astarlaunchpad'target="_blank">
                             <img src={medium}></img>
                           </a>
                         </li>
                         <li>
-                          <a href='#'>
+                          <a href='https://twitter.com/AstarPad'target="_blank">
                             <img src={twitter}></img>
+                          </a>
+                        </li>
+                        <li>
+                          <a href='https://discord.com/invite/HWxMSDFRwS'target="_blank">
+                            <img src={discord}></img>
                           </a>
                         </li>
                 </ul>

@@ -47,16 +47,16 @@ class Stake extends Component {
                                     <div className='bnr-butn-one'>
                                     <a href='#'>
 												<div className='pancakebutn2'>
-													<p>Buy on pancakeswap</p>
+													<p>Buy on ArthSwap</p>
 												</div>
 											</a>
-											<a href='#'>
-												<div className='Applybutn2'>
+											<a href='https://docs.google.com/forms/d/e/1FAIpQLSftAgtBZjAUUnECrWcfmXapTaceBJ2WtIZOQjbxR2FDGeo7xg/viewform'target='_blank'>
+												<div className='Applybutn'>
 													<p>Apply as a projext</p>
 												</div>
 											</a>
-											<a href='#'>
-												<div className='Applybutn2'>
+											<a href='https://docs.google.com/forms/d/e/1FAIpQLSftAgtBZjAUUnECrWcfmXapTaceBJ2WtIZOQjbxR2FDGeo7xg/viewform'target='_blank'>
+												<div className='Applybutn'>
 													<p>Apply as a projext</p>
 												</div>
 											</a>
