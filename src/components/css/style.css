@@ -3255,7 +3255,7 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator{
 
   /* explore page css open here*/
   .main-bg{
-    padding-top: 1px;
+    /* padding-top: 1px; */
     /* background-image: url(../images/Banner.png); */
     
   }

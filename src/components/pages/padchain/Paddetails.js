@@ -6,7 +6,6 @@ import { Row, Col, Container,Button,ModalHeader,ModalFooter, Modal, ModalBody } 
 
 import Header from '../header.js';
 import Footer from '../footer.js';
-import connectButton from '../ConnectButton.js'
 import search1 from '../../images/search1.png';
 import upcoming from '../../images/upcoming.png';
 import date from '../../images/date.png';
@@ -694,7 +693,7 @@ const checkWhiteList = async() => {
 		})
 	}
 
-    const claimBNB = () => {
+    const claimASTR = () => {
 		let _web3 = new Web3(web3Provider);
 		let _privatePresaleContract = new _web3.eth.Contract(PRIVATE_SALE_ABI,PRIVATE_SALE);
 		setModal(!modal);
@@ -842,7 +841,7 @@ const checkWhiteList = async() => {
 		})
 	}
 
-      const participatePrivatePresaleBNB = () => {
+      const participatePrivatePresaleASTR = () => {
 		let _web3 = new Web3(web3Provider);
 		let _privatePresaleContract = new _web3.eth.Contract(PRIVATE_SALE_ABI,PRIVATE_SALE);
 	 
@@ -892,9 +891,9 @@ const checkWhiteList = async() => {
  
 		return(
 			<div>
-			<div className='all-sect-bg'>
-            <Header />
+		
 		 	<div className="main-bg">
+             <Header />
 				<div className="container">
 
 					<div className="content-wrapper">
@@ -1126,7 +1125,7 @@ const checkWhiteList = async() => {
 									</div>
                         </div>
                         <div className="col-lg-6">
-                            <div className="list-box-l2 list-box-l2bg">
+                            <div className="list-box-l2">
                                 <div className="bnb-wrp">
                                    
                                     {
@@ -1240,14 +1239,14 @@ const checkWhiteList = async() => {
                                             wallet.account && status == 1 && progress < 100 && presale.status == 1 &&
                                             <>
                                             <div className="input-know-part">
-									        	<h5>Enter {raiseTokenDetails[1]} Amount do you want to invest. (Max Alloc.: { presale.raiseToken != "0x0000000000000000000000000000000000000000" ? parseFloat(presale.maxAllocation/1e1 ** raiseTokenDetails[2]).toFixed(2) : parseFloat(presale.maxAllocation/1e1 ** 18).toFixed(2)  } { presale.raiseToken == "0x0000000000000000000000000000000000000000" ?  "BNB" : raiseTokenDetails[1] }) </h5>
+									        	<h5>Enter {raiseTokenDetails[1]} Amount do you want to invest. (Max Alloc.: { presale.raiseToken != "0x0000000000000000000000000000000000000000" ? parseFloat(presale.maxAllocation/1e1 ** raiseTokenDetails[2]).toFixed(2) : parseFloat(presale.maxAllocation/1e1 ** 18).toFixed(2)  } { presale.raiseToken == "0x0000000000000000000000000000000000000000" ?  "ASTR" : raiseTokenDetails[1] }) </h5>
 											<input   placeholder="0.0" onChange={handleDeposit} value={depositAmount} /> <button onClick={depositMax} >Max</button> <h3><span>{bnbBalance} {raiseTokenDetails[1]}</span><p>Balance</p></h3>
 										</div>
                                         {
                                             (presale.whitelisted && userWhitelistedtrue) || !presale.whitelisted ?
                                             presale.raiseToken == "0x0000000000000000000000000000000000000000" ?
                                             
-                                            <a  onClick={participatePrivatePresaleBNB} >Participate</a>
+                                            <a  onClick={participatePrivatePresaleASTR} >Participate</a>
                                             :
                                             allowance > 0 ?
                                             <a  onClick={participatePrivatePresale} >Participate</a>
@@ -1268,7 +1267,7 @@ const checkWhiteList = async() => {
                                             
 
                                         
-                                            <a  onClick={claimBNB} >Claim Back {raiseTokenDetails[1]}</a>
+                                            <a  onClick={claimASTR} >Claim Back {raiseTokenDetails[1]}</a>
 
                                              }
                                                                                     {
@@ -1464,9 +1463,7 @@ const checkWhiteList = async() => {
                
 					
 			</div>
-            <Footer />
-            </div>
-			 
+			{/* <Footer />	 */}
 			
 			<Modal isOpen={modal} toggle={toggle}  centered={true}>
    
