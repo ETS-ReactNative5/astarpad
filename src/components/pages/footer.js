@@ -17,8 +17,8 @@ class Footer extends Component {
 					 </div>
 					 <div className='f-cont'>
 						 <ul className='f-cont-list'>
-							 <li><a href='#'>Terms of Services</a></li>
-							 <li><a href='#'>Privacy Policy</a></li>
+							 <li><a href='/termsofservices'>Terms of Services</a></li>
+							 <li><a href='/privacypolicy'>Privacy Policy</a></li>
 						 </ul>
 					 </div>
 					 <div className='f-social-icon'>

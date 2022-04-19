@@ -1775,6 +1775,9 @@ a:hover {
   font-size: 14px;
   font-weight: 600
 }
+.text-dark {
+  color: #ffffff!important;
+}
 
 .text2 {
   color: #a5aec0
@@ -2023,14 +2026,14 @@ box-shadow: 0px 0px 90px 6px #00000024;
   box-shadow: 0 0 8px 4px #0000003d;
   transition: 0.5s;
 }
-  
+   
 .connect-wallet input, .connect-wallet textarea {
   font-family: "Avenir LT Std 45 Book";
   width: 100%;
-  background-color: #b0adad;
+  background-color: #b0adad30;
   box-shadow: 1px 1px 8px rgb(0 0 0 / 39%);
   margin-top: 10px;
-  color: #000;
+  color: rgb(255, 255, 255);
   border-radius: 4px;
   padding: 10px 15px;
   border: 1px solid #fff;
@@ -2165,7 +2168,6 @@ box-shadow: 0px 0px 90px 6px #00000024;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   min-height: 100vh;
-  height: auto;
 }
 #createpresalebg2{
   background-color: #120F46;
@@ -4740,3 +4742,89 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator{
   font-size: 12px;
 }
 /* faq close here */
+
+
+/* privacy policy open here */
+.privacyp-main-wrap {
+  padding: 60px 0px;
+}
+.privacyp-wrap {
+  padding: 0px 40px;
+}
+.astr-pp > h1{
+  font-family: 'Furore';
+  font-size: 40px;
+   color: #fff;
+}
+.astr-pp > p{
+  font-family: 'poppins';
+  font-weight: 500;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.astr-pp {
+  margin-top: 80px;
+}
+.astr-pp > h3{
+  font-family: 'Furore';
+  font-size: 20px;
+   color: #fff;
+   margin-top: 30px;
+}
+.privacy-list {
+  color: #fff;
+}
+.privacy-list > li > p {
+  font-family: 'poppins';
+  font-weight: 500;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* privacy policy closed here */
+
+
+/* terms of services open here */
+.term-srvcs-main-wrap {
+  padding: 60px 0px;
+}
+.term-srvcs-wrap {
+  padding: 0px 40px;
+}
+.top-hding > h1{
+  text-align: center;
+  font-family: 'Furore';
+  font-size: 48px;
+   color: #fff;
+}
+.term-list2{
+  color: #fff;
+  
+}
+.term-list{
+  color: #fff;
+  list-style: auto;
+}
+.term-list > li > p {
+  font-family: 'poppins';
+  font-weight: 500;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.term-list2 > li > p {
+  font-family: 'poppins';
+  font-weight: 500;
+  color: #fff;
+  font-size: 14px;
+  margin-top: 15px;
+}
+.astr-pp > p > strong {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+
+/* terms of services closed here */

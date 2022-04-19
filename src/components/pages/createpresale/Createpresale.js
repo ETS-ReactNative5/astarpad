@@ -39,7 +39,7 @@ const Createpresale =  () => {
 	const [tokenDecimals,setTokenDecimals] = useState(0);
 	
 	const [raiseToken,setRaiseToken] = useState("0x0000000000000000000000000000000000000000");
-	const [raiseTokenSymbol,setRaiseTokenSymbol] = useState("BNB");
+	const [raiseTokenSymbol,setRaiseTokenSymbol] = useState("FTM");
 	const [raiseTokenDecimals,setRaiseTokenDecimals] = useState(0);
 
 	const [saleToken,setSaleToken] = useState("0x0000000000000000000000000000000000000000");
@@ -184,19 +184,60 @@ const Createpresale =  () => {
 		// _endTime = _web3.utils.toBN(_endTime);
 
 		// let _creator = wallet.account;
-		let _softcap = parseInt(softCap * 1e1 ** raiseTokenDecimals);  
-		_softcap = _web3.utils.toBN(_softcap);
-		let _hardCap = parseInt(hardCap * 1e1 ** raiseTokenDecimals); 
-		_hardCap = _web3.utils.toBN(_hardCap);
-		let _sRate = parseInt(saleRate * 1e1 ** tokenDecimals) ; 
-		let _saleRate = [_web3.utils.toBN(_sRate) , _web3.utils.toBN(parseInt(tokenTaxAmount*100))] ;
+		let _softcap = parseFloat(softCap) ;  
+		let _hardCap = parseFloat(hardCap) ; 
+		
+
+		if(raiseToken == "0x0000000000000000000000000000000000000000" || raiseToken == "" || raiseTokenDecimals == 18){
+			 _softcap = parseFloat(softCap) ;  
+			  _hardCap = parseFloat(hardCap) ; 
+			  _softcap = _web3.utils.toWei(_softcap.toString()) ;
+			  _hardCap = _web3.utils.toWei(_hardCap.toString()) ;
+			  
+		}
+		else{
+			_softcap = parseFloat(_softcap * 1e1 ** raiseTokenDecimals).toFixed() ; 
+			_softcap = _softcap.toString() ; 
+			// alert(_softcap);
+			_hardCap = parseFloat(_hardCap * 1e1 ** raiseTokenDecimals).toFixed() ; 
+			_hardCap = _hardCap.toString() ; 
+			// alert(_hardCap);
+			
+			// _softcap = _web3.utils.toBN(_softcap);
+			// _hardCap = _web3.utils.toBN(_hardCap);
+		
+		}
+ 
+		console.log(_softcap);
+		console.log(_hardCap);
+		let _sRate = parseFloat(saleRate)  ; 
+		if(tokenDecimals == 18){
+			_sRate = _web3.utils.toWei(_sRate.toString());
+
+		}
+		else{
+			_sRate = parseFloat(_sRate * 1e1 ** tokenDecimals).toFixed() ; 
+			// _sRate = _web3.utils.toBN(_sRate.toString());
+			_sRate = _sRate.toString() ;
+
+		}
+
+		let _saleRate = [_web3.utils.toBN(_sRate) , _web3.utils.toBN(parseFloat(tokenTaxAmount*100).toFixed())] ;
 		// _saleRate = _web3.utils.toBN(_saleRate);
 
 		let _vestingScheduled = vestingSchedule;
 		let _saleTokenLimit = 0 
 		if(onlyTokenHolders){
-			_saleTokenLimit = parseInt(minimumToken * 1e1 ** saleTokenDecimals); 
-			_saleTokenLimit = _web3.utils.toBN(_saleTokenLimit);
+			_saleTokenLimit = parseInt(minimumToken); 
+			if(saleTokenDecimals == 18){
+			_saleTokenLimit = _web3.utils.toWei(_saleTokenLimit.toString());
+
+			}
+			else{
+			_saleTokenLimit = _web3.utils.toBN(_saleTokenLimit).mul(_web3.utils.toBN(1e1 ** saleTokenDecimals));
+
+			}
+		 
 
 		}
 		let _vetsingPercentage = [initialVetsingPercentage*100,vetsingPercentage*100] ;
@@ -205,12 +246,23 @@ const Createpresale =  () => {
 		let _time = [_startTime,_endTime] ; 
 		let _cap = [_softcap,_hardCap] ; 
 		let _burnUnsold = burnUnsold ; 
-		let _max = parseInt(maxAllocation * 1e1 ** raiseTokenDecimals) ;  
-		_max = _web3.utils.toBN(_max);
+
+		let _max = parseInt(maxAllocation) ;  
+	
+		
+
+		if(raiseToken == "0x0000000000000000000000000000000000000000" || raiseToken == "" || raiseTokenDecimals == 18){
+		_max = _web3.utils.toWei(_max.toString()) ;
+
+		}
+		else{
+			_max = _web3.utils.toBN(_max).mul(_web3.utils.toBN(1e1 ** raiseTokenDecimals));
+		}
 
 		let _maxAllocation = [_saleTokenLimit,_max];
 		console.log(_details,_slug,_token,_time,_cap,_saleRate,_maxAllocation,_vestingScheduled,_vetsingPercentage,_whitelist,_publicSale,_burnUnsold);
 		setModal(!modal);
+
 		_privatePresaleContract.methods.createPresale(_details,_slug,_token,_time,_cap,_saleRate,_maxAllocation,_vestingScheduled,_vetsingPercentage,_whitelist,_publicSale,_burnUnsold).send({
 			from: wallet.account
 		}).on('receipt', function(receipt){
@@ -468,463 +520,459 @@ const Createpresale =  () => {
 	
 		return(
 			<div>
-				<div className='all-sect-bg'>
-					<Header />
-					<div id="createpresalebg">
+				<Header />
+				<div id="createpresalebg">
 				
-				<div className="container">
-				<div className="presale-page">
-				<div className="content">
-					<div className="presale-head">
-						<h3>Create Your Presale</h3>
-					</div>	
-					<div className="verify-box2">
-					<div className="token-input" id="presale">
-								<div className="wrp-verify-box">
-								<div className="verify-left-box ">	
-								<div className="softcap-content">
-								<div className="liquidity-c-box">
-											<h3>Paste Token Address</h3>
-											<div className="wrp-softcap">
-											 
-													<input placeholder="Token address" value={token} onChange={getToken} />
-
-												</div>
+					<div className="container">
+					<div className="presale-page">
+					<div className="content">
+                        <div className="presale-head">
+                            <h3>Create Your Presale</h3>
+                        </div>	
+						<div className="verify-box2">
+						<div className="token-input" id="presale">
+									<div className="wrp-verify-box">
+									<div className="verify-left-box ">	
+									<div className="softcap-content">
+									<div className="liquidity-c-box">
+												<h3>Paste Token Address</h3>
+												<div className="wrp-softcap">
 												 
-											</div>
-											
-										</div>
-								 
-								</div>
-								<div className="verify-right-box">
-										<div className="liquidity-c-box">
-											<h3>Sale Type</h3>
-											<select class="form-control12" onChange={handleSaleType} id="exampleFormControlSelect1">
-												<option value="1" selected>Private</option>
-												<option value="2" >Public</option>
-											 
-											</select>
-										</div>
-									</div>
-							</div>
-							</div>
-							
-							{
-								tokenSymbol &&
-								<>
-								{/* <div className="wrp-verify-box">
-								<div className="verify-left-box ">
-								<div className="liquidity-c-box">
-											<h3>Does your token has taxes ?</h3>
-											<select class="form-control12" onChange={handleTaxType} id="exampleFormControlSelect1">
-												<option value="0" selected>No</option>
-												<option value="1">Yes</option>
-											 
-											</select>
-										</div>	
-							
-								 
-								</div>
-								{
-									tokenTax &&
-							<div className="verify-right-box">
-								<div className="softcap-content">
-								<div className="liquidity-c-box">
-											<h3>How much tax % does your token has ?</h3>
-											<div className="wrp-softcap">
-											 
-													<input placeholder="Token address" value={tokenTaxAmount} onChange={handleTokenTaxAmount} />
+														<input placeholder="Token address" value={token} onChange={getToken} />
 
+													</div>
+													 
 												</div>
-												 
+												
 											</div>
-											
-										</div>
-									</div>
-								} 
-								
-							</div>*/}
-							<div className="unknow-presale-content">
-							
-							<div className="tbg-box">
-								<div className="wrpknow">
-									<div className="input-know">
-									<h3>How many token are up for presale?</h3>
-										<input onChange={handleTokenAmount} placeholder="0.0" />
-								{/* <p className="text-white" >Deduction: {tokenAmountTax} {tokenSymbol}</p> */}
-								<p className="" >Note: If your token has taxes please whitelist our Presale Contract {PRIVATE_SALE}</p>
-
-									</div>
-									<div className="know-content">
-									<p>Balance: {tokenBalance}</p>
-										<p>{tokenSymbol	}</p>
-									</div>
-								</div>
-							</div>
-							
-							
-						</div>
-						<ul className="presale-list">
-							
-						<li>
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-									<div className="presalerate-box">
-										<h5>Paste Raise Token Address (Leave Empty to raise in BNB) </h5>
-										<div className="wrp-softcap">
-											<div className="softcap-left">
-										<input placeholder="0x000.."  onChange={handleRaiseToken} />
-										</div>
-									</div>
-									</div>
-									</div>
 									 
-									
-								</div>
-							</li>
-						<li>
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-									<div className="presalerate-box">
-										<h5>Presale rate </h5>
-										<h3>1 {raiseTokenSymbol} = <input placeholder="00"  onChange={handleSaleRate} /></h3>
-									</div>
 									</div>
 									<div className="verify-right-box">
-										<div className="softcap-content mrt-location">
-										<h3>Max allocation per user <span>(Must be above 0)</span></h3>
-										<div className="wrp-softcap">
-											<div className="softcap-left">
-												<input placeholder="0.0"  onChange={handleMaxAllocation} />
+											<div className="liquidity-c-box">
+												<h3>Sale Type</h3>
+												<select class="form-control12" onChange={handleSaleType} id="exampleFormControlSelect1">
+													<option value="1" selected>Private</option>
+													<option value="2" >Public</option>
+												 
+												</select>
 											</div>
-											<div className="softcap-right">
-												<p>{raiseTokenSymbol}</p>
+										</div>
+								</div>
+								</div>
+								
+								{
+									tokenSymbol &&
+									<>
+									{/* <div className="wrp-verify-box">
+									<div className="verify-left-box ">
+									<div className="liquidity-c-box">
+												<h3>Does your token has taxes ?</h3>
+												<select class="form-control12" onChange={handleTaxType} id="exampleFormControlSelect1">
+													<option value="0" selected>No</option>
+													<option value="1">Yes</option>
+												 
+												</select>
+											</div>	
+								
+									 
+									</div>
+									{
+										tokenTax &&
+								<div className="verify-right-box">
+									<div className="softcap-content">
+									<div className="liquidity-c-box">
+												<h3>How much tax % does your token has ?</h3>
+												<div className="wrp-softcap">
+												 
+														<input placeholder="Token address" value={tokenTaxAmount} onChange={handleTokenTaxAmount} />
+
+													</div>
+													 
+												</div>
+												
+											</div>
+										</div>
+									} 
+									
+								</div>*/}
+								<div className="unknow-presale-content">
+								
+								<div className="tbg-box">
+									<div className="wrpknow">
+										<div className="input-know">
+										<h3>How many token are up for presale?</h3>
+											<input onChange={handleTokenAmount} placeholder="0.0" />
+									{/* <p className="text-white" >Deduction: {tokenAmountTax} {tokenSymbol}</p> */}
+									<p className="" >Note: If your token has taxes please whitelist our Presale Contract {PRIVATE_SALE}</p>
+
+										</div>
+										<div className="know-content">
+										<p>Balance: {tokenBalance}</p>
+											<p>{tokenSymbol	}</p>
+										</div>
+									</div>
+								</div>
+								
+								
+							</div>
+							<ul className="presale-list">
+								
+							<li>
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+										<div className="presalerate-box">
+											<h5>Paste Raise Token Address (Leave Empty to raise in FTM) </h5>
+											<div className="wrp-softcap">
+												<div className="softcap-left">
+											<input placeholder="0x000.."  onChange={handleRaiseToken} />
+											</div>
+										</div>
+										</div>
+										</div>
+										 
+										
+									</div>
+								</li>
+							<li>
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+										<div className="presalerate-box">
+											<h5>Presale rate </h5>
+											<h3>1 {raiseTokenSymbol} = <input placeholder="00"  onChange={handleSaleRate} /></h3>
+										</div>
+										</div>
+										<div className="verify-right-box">
+											<div className="softcap-content mrt-location">
+											<h3>Max allocation per user <span>(Must be above 0)</span></h3>
+											<div className="wrp-softcap">
+												<div className="softcap-left">
+													<input placeholder="0.0"  onChange={handleMaxAllocation} />
+												</div>
+												<div className="softcap-right">
+													<p>{raiseTokenSymbol}</p>
+												</div>
+											</div>
+											
 											</div>
 										</div>
 										
-										</div>
 									</div>
-									
-								</div>
-							</li>
-							<li>
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="softcap-content">
-											
-											<div className="wrp-softcap">
-												<div className="softcap-left">
-													<span>Softcap</span>
-													<input onChange={handleSoftCap} placeholder="0.0" />
-												</div>
-												<div className="softcap-right">
-													<p>{raiseTokenSymbol}</p>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-									<div className="verify-right-box">
-										<div className="softcap-content">
-											<div className="wrp-softcap">
-												<div className="softcap-left">
-													<span>Hardcap</span>
-													<input onChange={handleHardCap} value={hardCap} placeholder="0.0" />
-												</div>
-												<div className="softcap-right">
-													<p>{raiseTokenSymbol}</p>
-												</div>
-											</div>
-											
-										</div>
-									</div>
-								</div>
-							</li>
-						
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
+								</li>
+								<li>
 									<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Start Date</h3>
-											<div className="date-box">
-												<div className="date-box-left">
-													<div className="datetime-input"><input type="datetime-local" id="birthdaytime" name="text"  onChange={handleStartDate} /></div>
-													
+										<div className="verify-left-box">
+											<div className="softcap-content">
+												
+												<div className="wrp-softcap">
+													<div className="softcap-left">
+														<span>Softcap</span>
+														<input onChange={handleSoftCap} placeholder="0.0" />
+													</div>
+													<div className="softcap-right">
+														<p>{raiseTokenSymbol}</p>
+													</div>
+												</div>
+												
+											</div>
+										</div>
+										<div className="verify-right-box">
+											<div className="softcap-content">
+												<div className="wrp-softcap">
+													<div className="softcap-left">
+														<span>Hardcap</span>
+														<input onChange={handleHardCap} value={hardCap} placeholder="0.0" />
+													</div>
+													<div className="softcap-right">
+														<p>{raiseTokenSymbol}</p>
+													</div>
 												</div>
 												
 											</div>
 										</div>
 									</div>
-									<div className="verify-right-box">
-										<div className="date-content-box">
-												<h3>End Date</h3>
+								</li>
+							
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+										<div className="wrp-verify-box">
+										<div className="verify-left-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Start Date</h3>
 												<div className="date-box">
 													<div className="date-box-left">
-														<div className="datetime-input"><input type="datetime-local" id="birthdaytime"  onChange={handleEndDate} name="text" /> </div>
+														<div className="datetime-input"><input type="datetime-local" id="birthdaytime" name="text"  onChange={handleStartDate} /></div>
 														
 													</div>
 													
 												</div>
 											</div>
-									</div>
-								</div>
-								</div>
-								<div className="verify-right-box">
-								<div className="date-content-box">
-											<h3 className="start-d">What to do with unsold tokens ?</h3>
-											<select class="form-control12" onChange={handleUnsoldToken} id="exampleFormControlSelect1">
-												<option value="0" selected>Refund</option>
-												<option value="1">Burn</option>												 
-											</select>
 										</div>
-								</div>
-
-								</div>
-							</li>
-							 
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Only for Single Token Holders ?</h3>
-											<select class="form-control12" onChange={handleTokenHolders} id="exampleFormControlSelect1">
-												<option value="0" selected>No</option>
-												<option value="1">Yes</option>												 
-											</select>
-										</div>
-									</div>
-									{
-										onlyTokenHolders &&
-										<>
 										<div className="verify-right-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Paste Token Adress</h3>
-											<div className="date-box">
-													<div className="date-box-left">
-														<div className="datetime-input"><input type="text" placeholder='0x0...'  onChange={handleSaleToken} name="text" /> </div>
+											<div className="date-content-box">
+													<h3>End Date</h3>
+													<div className="date-box">
+														<div className="date-box-left">
+															<div className="datetime-input"><input type="datetime-local" id="birthdaytime"  onChange={handleEndDate} name="text" /> </div>
+															
+														</div>
 														
 													</div>
-													
 												</div>
-											
 										</div>
+									</div>
 									</div>
 									<div className="verify-right-box">
 									<div className="date-content-box">
-										<h3 className="start-d">Minimum Token to Hold for Participation ?</h3>
-										<div className="date-box">
-												<div className="date-box-left">
-													<div className="datetime-input"><input type="text" value={minimumToken}  onChange={handleMinimumToken} name="text" /> </div>
-													
-												</div>
+												<h3 className="start-d">What to do with unsold tokens ?</h3>
+												<select class="form-control12" onChange={handleUnsoldToken} id="exampleFormControlSelect1">
+													<option value="0" selected>Refund</option>
+													<option value="1">Burn</option>												 
+												</select>
+											</div>
+									</div>
+
+									</div>
+								</li>
+								 
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Only for Single Token Holders ?</h3>
+												<select class="form-control12" onChange={handleTokenHolders} id="exampleFormControlSelect1">
+													<option value="0" selected>No</option>
+													<option value="1">Yes</option>												 
+												</select>
+											</div>
+										</div>
+										{
+											onlyTokenHolders &&
+											<>
+											<div className="verify-right-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Paste Token Adress</h3>
+												<div className="date-box">
+														<div className="date-box-left">
+															<div className="datetime-input"><input type="text" placeholder='0x0...'  onChange={handleSaleToken} name="text" /> </div>
+															
+														</div>
+														
+													</div>
 												
 											</div>
-										
-									</div>
-								</div>
-								</>
-									}
-									
-								</div>
-
-							</li>
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Only for Whitelisted ?</h3>
-											<select class="form-control12" onChange={handleWhitelist} id="exampleFormControlSelect1">
-												<option value="0" selected>No</option>
-												<option value="1">Yes</option>												 
-											</select>
 										</div>
-									</div>
-									<div className="verify-right-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Vesting ?</h3>
-											<select class="form-control12" onChange={handleVestingSchedule} id="exampleFormControlSelect1">
-												<option value="0" selected>No</option>
-												<option value="1">Daily</option>
-												<option value="7">Weekly</option>
-												<option value="30">Monthly</option>
-												<option value="365">Yearly</option>
-											 
-											</select>
-										</div>
-									</div>
-								</div>
-
-							</li>
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									
-									{
-										vestingSchedule > 0 &&
-										<>
-									<div className="verify-left-box">
-										<div className="date-content-box">
-												<h3>Initial Vesting Percentage</h3>
-												<div className="date-box">
-													<div className="date-box-left">
-														<div className="datetime-input"><input type="text" id="birthdaytime"  onChange={handleInitialVestingPercentage} name="text" /> </div>
-														
-													</div>
-													
-												</div>
-											</div>
-									</div>
 										<div className="verify-right-box">
 										<div className="date-content-box">
-												<h3>Regular Vesting Percentage</h3>
-												<div className="date-box">
+											<h3 className="start-d">Minimum Token to Hold for Participation ?</h3>
+											<div className="date-box">
 													<div className="date-box-left">
-														<div className="datetime-input"><input type="text" id="birthdaytime"  onChange={handleVestingPercentage} name="text" /> </div>
+														<div className="datetime-input"><input type="text" value={minimumToken}  onChange={handleMinimumToken} name="text" /> </div>
 														
 													</div>
 													
 												</div>
-											</div>
+											
+										</div>
 									</div>
 									</>
 										}
-								</div>
-							</li>
-							
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Project Name</h3>
-											<div className="date-box">
-												<div className="date-box-left">
-													<div className="datetime-input"><input type="text" onChange={handleName}  /></div>
-													
-												</div>
-												
-											</div>
-										</div>
+										
 									</div>
-									<div className="verify-right-box">
-										<div className="date-content-box">
-												<h3>Project Website</h3>
-												<div className="date-box">
-													<div className="date-box-left">
-														<div className="datetime-input"><input type="text" onChange={handleWebsite} /> </div>
-														
-													</div>
-													
-												</div>
-											</div>
-									</div>
-								</div>
-							</li>
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Twitter</h3>
-											<div className="date-box">
-												<div className="date-box-left">
-													<div className="datetime-input"><input type="text" onChange={handleTwitter} /></div>
-													
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div className="verify-right-box">
-										<div className="date-content-box">
-												<h3>Telegram</h3>
-												<div className="date-box">
-													<div className="date-box-left">
-														<div className="datetime-input"><input type="text" onChange={handleTelegram} /> </div>
-														
-													</div>
-													
-												</div>
-											</div>
-									</div>
-								</div>
-							</li>
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Medium</h3>
-											<div className="date-box">
-												<div className="date-box-left">
-													<div className="datetime-input"><input type="text" onChange={handleMedium} /></div>
-													
-												</div>
-												
-											</div>
-										</div>
-									</div>
-									<div className="verify-right-box">
-										<div className="date-content-box">
-												<h3>Discord</h3>
-												<div className="date-box">
-													<div className="date-box-left">
-														<div className="datetime-input"><input type="text" onChange={handleDiscord} /> </div>
-														
-													</div>
-													
-												</div>
-											</div>
-									</div>
-								</div>
-							</li>
-							
-							<li className="mt-3">
-								<div className="wrp-verify-box">
-									<div className="verify-left-box">
-										<div className="date-content-box">
-											<h3 className="start-d">Project Sale Slug</h3>
-											<div className="date-box">
-												<div className="date-box-left">
-													<div className="datetime-input"><input type="text" onChange={handleSlug} value={slug} /></div>
-													
-												</div>
-												{
-													slug  ? 
-													slugAvailable ? 
-													<span>Slug is Available</span>
-													: 
-													<span>Slug is not Available</span>
-													:
-													<span></span>
-												}
-											</div>
-										</div>
-									</div>
-									 
-								</div>
-							</li>
-							
-						</ul>
-						<div className="approve-text">
-							<h5 className="mt-3 font-size-large">Note: You will be able to manage whitelisted users only after pre-sale is created. </h5> 
-							{
-								tokenAllowance == 0 ?
-								<button className="approve-btns" onClick={approveToken} >Approve {tokenSymbol}</button>
-								:
-								<button className="approve-btns" onClick={createPrivatePresale} >Create Presale</button>
-							}
-						</div>
-						</>
-							}
-					</div>
- 
 
-				</div>
-				</div>
-				</div>
-		</div>
-					<Footer />
-				</div>
-	
+								</li>
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Only for Whitelisted ?</h3>
+												<select class="form-control12" onChange={handleWhitelist} id="exampleFormControlSelect1">
+													<option value="0" selected>No</option>
+													<option value="1">Yes</option>												 
+												</select>
+											</div>
+										</div>
+										<div className="verify-right-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Vesting ?</h3>
+												<select class="form-control12" onChange={handleVestingSchedule} id="exampleFormControlSelect1">
+													<option value="0" selected>No</option>
+													<option value="1">Daily</option>
+													<option value="7">Weekly</option>
+													<option value="30">Monthly</option>
+													<option value="365">Yearly</option>
+												 
+												</select>
+											</div>
+										</div>
+									</div>
+
+								</li>
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										
+										{
+											vestingSchedule > 0 &&
+											<>
+										<div className="verify-left-box">
+											<div className="date-content-box">
+													<h3>Initial Vesting Percentage</h3>
+													<div className="date-box">
+														<div className="date-box-left">
+															<div className="datetime-input"><input type="text" id="birthdaytime"  onChange={handleInitialVestingPercentage} name="text" /> </div>
+															
+														</div>
+														
+													</div>
+												</div>
+										</div>
+											<div className="verify-right-box">
+											<div className="date-content-box">
+													<h3>Regular Vesting Percentage</h3>
+													<div className="date-box">
+														<div className="date-box-left">
+															<div className="datetime-input"><input type="text" id="birthdaytime"  onChange={handleVestingPercentage} name="text" /> </div>
+															
+														</div>
+														
+													</div>
+												</div>
+										</div>
+										</>
+											}
+									</div>
+								</li>
+								
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Project Name</h3>
+												<div className="date-box">
+													<div className="date-box-left">
+														<div className="datetime-input"><input type="text" onChange={handleName}  /></div>
+														
+													</div>
+													
+												</div>
+											</div>
+										</div>
+										<div className="verify-right-box">
+											<div className="date-content-box">
+													<h3>Project Website</h3>
+													<div className="date-box">
+														<div className="date-box-left">
+															<div className="datetime-input"><input type="text" onChange={handleWebsite} /> </div>
+															
+														</div>
+														
+													</div>
+												</div>
+										</div>
+									</div>
+								</li>
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Twitter</h3>
+												<div className="date-box">
+													<div className="date-box-left">
+														<div className="datetime-input"><input type="text" onChange={handleTwitter} /></div>
+														
+													</div>
+													
+												</div>
+											</div>
+										</div>
+										<div className="verify-right-box">
+											<div className="date-content-box">
+													<h3>Telegram</h3>
+													<div className="date-box">
+														<div className="date-box-left">
+															<div className="datetime-input"><input type="text" onChange={handleTelegram} /> </div>
+															
+														</div>
+														
+													</div>
+												</div>
+										</div>
+									</div>
+								</li>
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Medium</h3>
+												<div className="date-box">
+													<div className="date-box-left">
+														<div className="datetime-input"><input type="text" onChange={handleMedium} /></div>
+														
+													</div>
+													
+												</div>
+											</div>
+										</div>
+										<div className="verify-right-box">
+											<div className="date-content-box">
+													<h3>Discord</h3>
+													<div className="date-box">
+														<div className="date-box-left">
+															<div className="datetime-input"><input type="text" onChange={handleDiscord} /> </div>
+															
+														</div>
+														
+													</div>
+												</div>
+										</div>
+									</div>
+								</li>
+								
+								<li className="mt-3">
+									<div className="wrp-verify-box">
+										<div className="verify-left-box">
+											<div className="date-content-box">
+												<h3 className="start-d">Project Sale Slug</h3>
+												<div className="date-box">
+													<div className="date-box-left">
+														<div className="datetime-input"><input type="text" onChange={handleSlug} value={slug} /></div>
+														
+													</div>
+													{
+														slug  ? 
+														slugAvailable ? 
+														<span>Slug is Available</span>
+														: 
+														<span>Slug is not Available</span>
+														:
+														<span></span>
+													}
+												</div>
+											</div>
+										</div>
+										 
+									</div>
+								</li>
+								
+							</ul>
+							<div className="approve-text">
+								<h5 className="mt-3 font-size-large">Note: You will be able to manage whitelisted users only after pre-sale is created. </h5> 
+								{
+									tokenAllowance == 0 ?
+									<button className="approve-btns" onClick={approveToken} >Approve {tokenSymbol}</button>
+									:
+									<button className="approve-btns" onClick={createPrivatePresale} >Create Presale</button>
+								}
+							</div>
+							</>
+								}
+						</div>
+	 
+ 
+					</div>
+					</div>
+					</div>
+			</div>
 				
 			<Modal isOpen={modal} toggle={toggle}  centered={true}>
    

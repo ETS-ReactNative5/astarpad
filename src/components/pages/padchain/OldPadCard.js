@@ -122,10 +122,10 @@ const OldPadCard = (props) => {
 														{/* change */}
 														<div className="row">
 																<div className="col-md-6">
-																	<div className="progressbar-left"><b>{parseFloat(presale.raisedAmount/1e18).toFixed(2)}/{presale.hardCap/1e18}  BNB</b></div>
+																	<div className="progressbar-left"><b>{parseFloat(presale.raisedAmount/1e18).toFixed(2)}/{presale.hardCap/1e18}  ASTR</b></div>
 																</div>	
 																<div className="col-md-6">
-																	<div className="progressbar-right"><b>{parseFloat(presale.raisedAmount/1e18).toFixed(2)} BNB</b></div>
+																	<div className="progressbar-right"><b>{parseFloat(presale.raisedAmount/1e18).toFixed(2)} ASTR</b></div>
 																</div>	
 															</div>
 														{/* change */}

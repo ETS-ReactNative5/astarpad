@@ -105,9 +105,9 @@ const Upcomingpool = () => {
 		return(
 			<div>
 			
-		
-		 
-			<div id="createpresalebg2">
+			<div className='all-sect-bg'>
+			
+			<div id="createpresalebg3">
 				
 				<div className="container-fluid">
 					<div className="content-wrapper">
@@ -130,49 +130,11 @@ const Upcomingpool = () => {
 								</div>
 				
 							</div> */}
-							{/* <ul class="tabs">
-							<li class="tab-button">
-								
-								<a href="#" class="tab-link active" data-tab="tab1">
-									<div className="tab-img">
-										<img src={clock} className="lock" />
-									</div>	
-								Upcoming
-								</a>
-							</li>
-							<li class="tab-button mrt-left">
-								<a href="#" class="tab-link " data-tab="tab2">
-									<div className="tab-img">
-										<img src={live} />
-									</div>
-									Live
-								</a>
-							</li>
-						
-							<li class="tab-button mrt-left">
-								<a href="#" class="tab-link" data-tab="tab3">
-									<div className="tab-img">
-										<img src={success2} />
-									</div>
-									Success
-								</a>
-							</li>
-							<li class="tab-button mrt-left">
-								<a href="#" class="tab-link" data-tab="tab4">
-									<div className="tab-img">
-										<img src={failing} />
-									</div>
-									Cancelled
-								</a>
-							</li>
-							</ul> */}
+							
 							
 						</div>
 						</div>
-						<div className="">
-							<div class="tab-pane pdb-tab">
-							<div class="tab-panel active" id="tab1">
-								<div className="wrp-list-box">
+						<div className="wrp-list-box">
 								
 								{
                                          upcomingArray.length > 0 && upcomingArray.map((v,i) => {
@@ -188,81 +150,13 @@ const Upcomingpool = () => {
 
 									 }			
 								</div>
-								
-							</div>
-							<div class="tab-panel" id="tab2">
-								
-							<div className="wrp-list-box">
-							{
-                                         liveArray.length > 0 && liveArray.map((v,i) => {
-                                             return (
-                                                 <PadCard index={v.count} public={false} old={false}  />
-                                             )
-                                         })
-                                     }
-
-									 {
-										 liveArray.length == 0 && 
-										 <div className="text-center w-100 darkBg text-dark emptyCard d-flex align-items-center justify-content-center"><h4>No Presale Available to Show</h4></div>
-
-									 }	
-							
-								</div>
-							
-							</div>
-							<div class="tab-panel" id="tab3">
-									
-							<div className="wrp-list-box">
-							
-								 
-							{/* <OldPadCard   public={false}  index={0}  /> */}
-							{
-                                         successArray.length > 0 && successArray.map((v,i) => {
-                                             return (
-                                                 <PadCard index={v.count} public={false} old={false}  />
-                                             )
-                                         })
-                                     }
-
-									 {
-										 successArray.length == 0 && 
-										 <div className="text-center w-100 darkBg text-dark emptyCard d-flex align-items-center justify-content-center"><h4>No Presale Available to Show</h4></div>
-
-									 }
-							 
-									
-								</div>
-							</div>
-							<div class="tab-panel" id="tab4">
-							<div className="wrp-list-box">
-									
-							{
-                                         failArray.length > 0 && failArray.map((v,i) => {
-                                             return (
-                                                 <PadCard index={v.count} public={false} old={false}  />
-                                             )
-                                         })
-                                     }
-
-									 {
-										 failArray.length == 0 && 
-										 <div className="text-center w-100 darkBg text-dark emptyCard d-flex align-items-center justify-content-center"><h4>No Presale Available to Show</h4></div>
-
-									 }	
-
-								 
-									
-								</div>
-							</div>
-						</div>
-					</div>
 					</div>
 					</div>
 				</div>
 				
 			</div>
-		 
-			 
+		
+			</div>
 		
 			</div>
 		);

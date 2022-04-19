@@ -83,7 +83,7 @@ class Faq extends Component {
 												<div class="block__item block__items2">
 													<div class="block__title">What is the eligibility criteria for participating in IDO?</div>
 													<div class="block__text">
-                                                    Investors will need to hold the $ASTR tokens in the wallet to participate. There is no need to stake. $APAD LPs will also NOT count and the tokens must be available in your wallet to be eligible.
+                                                    Investors will need to hold the $APAD tokens in the wallet to participate. There is no need to stake. $APAD LPs will also NOT count and the tokens must be available in your wallet to be eligible.
 													</div>
 												</div>
 												<div class="block__item block__items2">

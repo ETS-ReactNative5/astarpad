@@ -107,7 +107,7 @@ const Completedpools = () => {
 			
 			<div className='all-sect-bg'>
 			
-			<div id="createpresalebg">
+			<div id="createpresalebg3">
 				
 				<div className="container-fluid">
 					<div className="content-wrapper">
@@ -134,8 +134,11 @@ const Completedpools = () => {
 							
 						</div>
 						</div>
-                        <div className="wrp-list-box">
-						{
+						<div className="wrp-list-box">
+							
+								 
+							{/* <OldPadCard   public={false}  index={0}  /> */}
+							{
                                          successArray.length > 0 && successArray.map((v,i) => {
                                              return (
                                                  <PadCard index={v.count} public={false} old={false}  />
@@ -148,7 +151,9 @@ const Completedpools = () => {
 										 <div className="text-center w-100 darkBg text-dark emptyCard d-flex align-items-center justify-content-center"><h4>No Presale Available to Show</h4></div>
 
 									 }
-                                     </div>
+							 
+									
+								</div>
 					</div>
 					</div>
 				</div>

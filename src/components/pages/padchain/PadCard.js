@@ -28,7 +28,7 @@ const PadCard = (props) => {
 	const [presaleDetails, setPresaleDetails] = useState({});
 	const [progress, setProgress] = useState(0);
 	const [logo, setLogo] = useState(lightlogo);
-	const [raiseSymbol, setRaiseSymbol] = useState("BNB");
+	const [raiseSymbol, setRaiseSymbol] = useState("ASTR");
 	const [raiseTokenDecimals,setRaiseTokenDecimals] = useState(0);
 	const [participants, setParticipants] = useState(0);
 	const [publicSale, setPublicSale] = useState(false);
@@ -113,7 +113,7 @@ const PadCard = (props) => {
 
 	return (
 		<div className="list-box-l">
-			<a href={"/iuo/details/" + presaleDetails.slug} >
+			<a href={"/IAO/details/" + presaleDetails.slug} >
 				<div className="wrp-bitrides">
 					<div className="bitrides-img">
 					</div>

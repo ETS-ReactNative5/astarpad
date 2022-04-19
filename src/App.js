@@ -17,6 +17,8 @@ import Oldpaddetails from './components/pages/padchain/Oldpaddetails';
 import NFTMarketplace from './components/pages/NFTMarketplace/NFTMarketplace';
 import Claimtoken from './components/pages/Claimtoken/Claimtoken.js';
 import Stake from './components/pages/Stake/Stake.js';
+import Privacypolicy from './components/pages/Privacypolicy/Privacypolicy';
+import Termsofservices from './components/pages/Termsofservices/Termsofservices';
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -34,8 +36,8 @@ class App extends Component {
 		<Route exact path="/" name="Home Page" component = {Home} />
 			<Route exact path="/Claimtoken" name="Claimtoken Page" component = {Claimtoken} />
 			<Route exact path="/Stake" name="Stake Page" component = {Stake} />
-			<Route exact path="/iuo/list" name="Padchain Page" component = {Padchain} />
-			<Route exact path="/iuo/details/:slug" component={Paddetails} />
+			<Route exact path="/IAO/list" name="Padchain Page" component = {Padchain} />
+			<Route exact path="/IAO/details/:slug" component={Paddetails} />
 			<Route exact path="/paddetails/:slug" component={Oldpaddetails} />
 			<Route exact path="/createpresale" name="Createpresale Page" component = {Createpresale} />
 			<Route exact path="/choose" name="NFTMarketplace Page" component = {NFTMarketplace} />
@@ -46,6 +48,9 @@ class App extends Component {
 			<Route exact path="/single" name="marketplace Page" component = {Single} />
 			<Route exact path="/profile" name="Profile Page" component = {Profile} />
 			<Route exact path="/profile/view/:account" name="View Profile Page" component = {ViewProfile} />
+			<Route exact path="/privacypolicy" name="Privacypolicy Page" component = {Privacypolicy} />
+			<Route exact path="/termsofservices" name="Termsofservices Page" component = {Termsofservices} />
+
 			 
 			 
 			 

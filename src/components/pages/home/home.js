@@ -9,6 +9,8 @@ import toyo from '../../images/toyo.png'
 import progress from '../../images/progress.png'
 import Upcomingpool from '../padchain/Upcomingpool.js';
 import Completedpools from '../padchain/Completedpools.js';
+import Livepools from '../padchain/Livepools.js';
+import Cancelledpools from '../padchain/Cancelledpools.js';
 import Faq from '../Faq/index.js';
 
 
@@ -44,9 +46,9 @@ class Home extends Component {
 									</div>
 									<div className='bnr-butn'>
 										<div className='bnr-butn-one'>
-											<a href='https://docs.google.com/forms/d/e/1FAIpQLSftAgtBZjAUUnECrWcfmXapTaceBJ2WtIZOQjbxR2FDGeo7xg/viewform'target='_blank'>
+											<a href='https://docs.google.com/forms/d/e/1FAIpQLSftAgtBZjAUUnECrWcfmXapTaceBJ2WtIZOQjbxR2FDGeo7xg/viewform' target='_blank'>
 												<div className='Applybutn'>
-													<p>Apply as a projext</p>
+													<p>Apply as a project</p>
 												</div>
 											</a>
 											<a href='#'>
@@ -56,12 +58,12 @@ class Home extends Component {
 											</a>
 										</div>
 										<div className='bnr-butn-two'>
-											<a href='#'>
+											<a href='#FAQ'>
 												<div className='buy-s-butn'>
 													<p>FAQ</p>
 												</div>
 											</a>
-											<a href='https://blockscout.com/astar/address/0xf8bD0302E8E0b652DcD67D92CF42fbC5aFBdc127/transactions'target='_blank'>
+											<a href='https://blockscout.com/astar/address/0xf8bD0302E8E0b652DcD67D92CF42fbC5aFBdc127/transactions' target='_blank'>
 												<div className='buy-s-butntwo'>
 													<p>Astarscan</p>
 												</div>
@@ -138,96 +140,45 @@ class Home extends Component {
 							</div>
 						</div>
 					</section>
+					<section id='live'>
+						<div className='upcoming-main-wrap'>
+							<div className='container-fluid'>
+								<div className='upcoming-wrap'>
+									<div className='upcoming-heading'>
+										<h3>LIVE Pools</h3>
+									</div>
 
+								</div>
+								<Livepools />
+
+							</div>
+						</div>
+					</section>
 					<section id='upcoming'>
 						<div className='upcoming-main-wrap'>
 							<div className='container-fluid'>
 								<div className='upcoming-wrap'>
 									<div className='upcoming-heading'>
-										<h3>UPCOMING POOLS</h3>
+										<h3>UPCOMING Pools</h3>
 									</div>
-
 								</div>
 								<Upcomingpool />
 
-								{/* <div className='u-box'>
-									<div className='ubleft'>
-										<div className='upcoming-box-wrap'>
-											<div className='upcoming-top'>
-												<div className='u-top-left'>
-													<img src={toyo}></img>
-												</div>
-												<div className='u-top-right'>
-													<div className='toyo-hding'>
-														<h5>TOYOVERSE</h5>
-														<p>IN 10 DAYS</p>
-													</div>
-													<p>Toyo starts as a play-to-earn strategic PVP/PVE blockchain
-														fighting game with NFT action-figure characters, body parts,
-														and item ownership.
-													</p>
-													<div className='fist-phase-but'>
-														<a href='#'>1st Phase</a>
-													</div>
-												</div>
-											</div>
-											<div className='upcoming-bottom'>
-												<ul className='u-bootom-lis'>
-													<li>
-														<p>Min allocation</p>
-														<h5 className='large'>0.01</h5>
-													</li>
-													<li>
-														<p>Maximum</p>
-														<h5>TBA</h5>
-													</li>
-													<li>
-														<p>Acess</p>
-														<h5>Public</h5>
-													</li>
-												</ul>
-											</div>
-										</div>
+							</div>
+						</div>
+					</section>
+					<section id='cancelled'>
+						<div className='upcoming-main-wrap'>
+							<div className='container-fluid'>
+								<div className='upcoming-wrap'>
+									<div className='upcoming-heading'>
+										<h3>CANCELLED Pools</h3>
 									</div>
-									<div className='ubright'>
-									<div className='upcoming-box-wrap'>
-											<div className='upcoming-top'>
-												<div className='u-top-left'>
-													<img src={toyo}></img>
-												</div>
-												<div className='u-top-right'>
-													<div className='toyo-hding'>
-														<h5>TOYOVERSE</h5>
-														<p>IN 10 DAYS</p>
-													</div>
-													<p>Toyo starts as a play-to-earn strategic PVP/PVE blockchain
-														fighting game with NFT action-figure characters, body parts,
-														and item ownership.
-													</p>
-													<div className='fist-phase-but'>
-														<a href='#'>1st Phase</a>
-													</div>
-												</div>
-											</div>
-											<div className='upcoming-bottom'>
-												<ul className='u-bootom-lis'>
-													<li>
-														<p>Min allocation</p>
-														<h5 className='large'>0.01</h5>
-													</li>
-													<li>
-														<p>Maximum</p>
-														<h5>TBA</h5>
-													</li>
-													<li>
-														<p>Acess</p>
-														<h5>Public</h5>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div> */}
+
+								</div>
+								<Cancelledpools />
+
+
 							</div>
 						</div>
 					</section>
@@ -240,206 +191,7 @@ class Home extends Component {
 									</div>
 								</div>
 								<Completedpools />
-								{/* <div className='P-box'>
-									<div className='pbleft'>
-										<div className='pool-box-wrap'>
-											<div className='upcoming-top'>
-												<div className='u-top-left'>
-													<img src={toyo}></img>
-												</div>
-												<div className='u-top-right'>
-													<div className='toyo-hding'>
-														<h5>TOYOVERSE</h5>
-														<p>IN 10 DAYS</p>
-													</div>
-													<p>Toyo starts as a play-to-earn strategic PVP/PVE blockchain
-														fighting game with NFT action-figure characters, body parts,
-														and item ownership.
-													</p>
-													<div className='fist-phase-but'>
-														<a href='#'>1st Phase</a>
-													</div>
-												</div>
-											</div>
-											<div className='pool-bottom'>
-												<ul className='u-bootom-lis'>
-													<li>
-														<p>Total Raise</p>
-														<h5 className='large'>379997.79<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Maximum</p>
-														<h5>3301.57<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Acess</p>
-														<h5>Public</h5>
-													</li>
-												</ul>
-											</div>
-											<div className='progress-main-wrap'>
-												<div className='progress-wrap'>
-													<div className='pro-l'>
-													<p>Progress<strong>99.9%</strong></p>
-													</div>
-													<div className='pro-r'>
-													<p>Max Participants - 4484</p>
-													</div>
-												</div>
-												<img src={progress}></img>
-											</div>
-										</div>
-									</div>
-									<div className='pbright'>
-									<div className='pool-box-wrap'>
-											<div className='upcoming-top'>
-												<div className='u-top-left'>
-													<img src={toyo}></img>
-												</div>
-												<div className='u-top-right'>
-													<div className='toyo-hding'>
-														<h5>TOYOVERSE</h5>
-														<p>IN 10 DAYS</p>
-													</div>
-													<p>Toyo starts as a play-to-earn strategic PVP/PVE blockchain
-														fighting game with NFT action-figure characters, body parts,
-														and item ownership.
-													</p>
-													<div className='fist-phase-but'>
-														<a href='#'>1st Phase</a>
-													</div>
-												</div>
-											</div>
-											<div className='pool-bottom'>
-												<ul className='u-bootom-lis'>
-													<li>
-														<p>Total Raise</p>
-														<h5 className='large'>379997.79<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Maximum</p>
-														<h5>3301.57<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Acess</p>
-														<h5>Public</h5>
-													</li>
-												</ul>
-											</div>
-											<div className='progress-main-wrap'>
-												<div className='progress-wrap'>
-													<div className='pro-l'>
-													<p>Progress<strong>99.9%</strong></p>
-													</div>
-													<div className='pro-r'>
-													<p>Max Participants - 4484</p>
-													</div>
-												</div>
-												<img src={progress}></img>
-											</div>
-										</div>
-									</div>
-								</div> */}
-								{/* <div className='P-box'>
-									<div className='pbleft'>
-										<div className='pool-box-wrap'>
-											<div className='upcoming-top'>
-												<div className='u-top-left'>
-													<img src={toyo}></img>
-												</div>
-												<div className='u-top-right'>
-													<div className='toyo-hding'>
-														<h5>TOYOVERSE</h5>
-														<p>IN 10 DAYS</p>
-													</div>
-													<p>Toyo starts as a play-to-earn strategic PVP/PVE blockchain
-														fighting game with NFT action-figure characters, body parts,
-														and item ownership.
-													</p>
-													<div className='fist-phase-but'>
-														<a href='#'>1st Phase</a>
-													</div>
-												</div>
-											</div>
-											<div className='pool-bottom'>
-												<ul className='u-bootom-lis'>
-													<li>
-														<p>Total Raise</p>
-														<h5 className='large'>379997.79<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Maximum</p>
-														<h5>3301.57<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Acess</p>
-														<h5>Public</h5>
-													</li>
-												</ul>
-											</div>
-											<div className='progress-main-wrap'>
-												<div className='progress-wrap'>
-													<div className='pro-l'>
-													<p>Progress<strong>99.9%</strong></p>
-													</div>
-													<div className='pro-r'>
-													<p>Max Participants - 4484</p>
-													</div>
-												</div>
-												<img src={progress}></img>
-											</div>
-										</div>
-									</div>
-									<div className='pbright'>
-									<div className='pool-box-wrap'>
-											<div className='upcoming-top'>
-												<div className='u-top-left'>
-													<img src={toyo}></img>
-												</div>
-												<div className='u-top-right'>
-													<div className='toyo-hding'>
-														<h5>TOYOVERSE</h5>
-														<p>IN 10 DAYS</p>
-													</div>
-													<p>Toyo starts as a play-to-earn strategic PVP/PVE blockchain
-														fighting game with NFT action-figure characters, body parts,
-														and item ownership.
-													</p>
-													<div className='fist-phase-but'>
-														<a href='#'>1st Phase</a>
-													</div>
-												</div>
-											</div>
-											<div className='pool-bottom'>
-												<ul className='u-bootom-lis'>
-													<li>
-														<p>Total Raise</p>
-														<h5 className='large'>379997.79<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Maximum</p>
-														<h5>3301.57<strong>BUSD</strong></h5>
-													</li>
-													<li>
-														<p>Acess</p>
-														<h5>Public</h5>
-													</li>
-												</ul>
-											</div>
-											<div className='progress-main-wrap'>
-												<div className='progress-wrap'>
-													<div className='pro-l'>
-													<p>Progress<strong>99.9%</strong></p>
-													</div>
-													<div className='pro-r'>
-													<p>Max Participants - 4484</p>
-													</div>
-												</div>
-												<img src={progress}></img>
-											</div>
-										</div>
-									</div>
-								</div> */}
+
 							</div>
 						</div>
 					</section>
@@ -448,7 +200,7 @@ class Home extends Component {
 
 						<div className='faq'>
 							<div className='container-fluid'>
- <Faq />
+								<Faq />
 							</div>
 						</div>
 
